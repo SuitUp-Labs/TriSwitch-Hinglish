@@ -5,3 +5,6 @@ torch>=1.13.1
 transformers>=4.30.0
 numpy>=1.21.0
 googletrans==4.0.0-rc1
+unbabel-comet>=2.0.0
+tqdm>=4.65.0
+evaluate>=0.4.0
