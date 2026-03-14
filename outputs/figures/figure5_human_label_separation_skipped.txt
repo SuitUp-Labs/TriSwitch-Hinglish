@@ -1,0 +1,2 @@
+Figure 5 skipped: no non-null human semantic labels available in metric_scores.csv.
+Fill human_validation.csv and rebuild pairwise labels before re-running plotting.

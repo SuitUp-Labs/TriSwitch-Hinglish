@@ -1,0 +1,1464 @@
+TriSwitch Dataset Sanity Report
+========================================
+total_rows: 500
+missing_required_fields: 0
+duplicate_ids: 0
+invalid_switch_points: 0
+token_length_mismatch: 470
+pattern_count_mismatch: 485
+switch_point_pattern_mismatch: 497
+
+Detailed Notes
+----------------------------------------
+- ID 2: pattern counts (HN=2, EN=3) != metadata counts (HN=3, EN=2)
+- ID 2: switch_points [0, 1] != pattern-derived [2]
+- ID 3: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 3: switch_points [0, 3] != pattern-derived [0, 2, 4]
+- ID 4: switch_points [0, 2, 3, 4] != pattern-derived [0, 1, 4]
+- ID 5: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 5: pattern counts (HN=2, EN=3) != metadata counts (HN=3, EN=2)
+- ID 5: switch_points [0, 2] != pattern-derived [0, 1, 2, 3]
+- ID 6: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 6: switch_points [0, 2, 3] != pattern-derived [0, 1, 4]
+- ID 7: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 7: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 7: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 8: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 8: switch_points [0, 1, 2] != pattern-derived [3]
+- ID 9: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 9: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 9: switch_points [0, 1] != pattern-derived [1, 2, 3]
+- ID 10: switch_points [0, 2, 3] != pattern-derived [0, 1, 3]
+- ID 11: switch_points [0, 2, 3] != pattern-derived [0, 1, 3]
+- ID 12: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 12: pattern counts (HN=4, EN=3) != metadata counts (HN=3, EN=3)
+- ID 12: switch_points [2, 3, 4] != pattern-derived [1, 4]
+- ID 13: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 13: pattern counts (HN=3, EN=2) != metadata counts (HN=2, EN=2)
+- ID 13: switch_points [0, 2] != pattern-derived [0, 1, 2]
+- ID 14: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 14: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 14: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 15: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 15: pattern counts (HN=6, EN=1) != metadata counts (HN=5, EN=1)
+- ID 15: switch_points [3] != pattern-derived [2, 3]
+- ID 16: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 16: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 16: switch_points [0, 1] != pattern-derived [1, 3, 4]
+- ID 17: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 17: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 17: switch_points [0, 3] != pattern-derived [0, 2, 4]
+- ID 18: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 18: pattern counts (HN=4, EN=2) != metadata counts (HN=3, EN=2)
+- ID 18: switch_points [2, 3] != pattern-derived [1, 3]
+- ID 19: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 19: pattern counts (HN=6, EN=0) != metadata counts (HN=5, EN=0)
+- ID 20: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 20: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 20: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 21: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 21: switch_points [0, 2, 3] != pattern-derived [0, 1, 4]
+- ID 22: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 22: pattern counts (HN=4, EN=2) != metadata counts (HN=3, EN=2)
+- ID 22: switch_points [0, 2] != pattern-derived [0, 1, 2]
+- ID 23: switch_points [0, 2, 3] != pattern-derived [0, 1, 3]
+- ID 24: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 24: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 24: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 25: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 25: pattern counts (HN=3, EN=3) != metadata counts (HN=2, EN=3)
+- ID 25: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 26: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 26: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 26: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 27: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 27: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 27: switch_points [0, 1] != pattern-derived [0, 1, 3]
+- ID 28: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 28: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 28: switch_points [2, 3] != pattern-derived [0, 1, 3]
+- ID 29: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 29: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 29: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 30: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 30: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 30: switch_points [0, 1] != pattern-derived [2]
+- ID 31: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 31: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 31: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 32: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 32: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 32: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 33: switch_points [0, 2] != pattern-derived [0, 1, 2]
+- ID 34: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 34: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 34: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 35: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 35: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 35: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 36: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 36: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 36: switch_points [0] != pattern-derived [0, 1, 2]
+- ID 37: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 37: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 37: switch_points [0] != pattern-derived [0, 1, 2]
+- ID 38: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 38: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 38: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 39: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 39: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 39: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 40: pattern counts (HN=4, EN=2) != metadata counts (HN=5, EN=1)
+- ID 40: switch_points [3] != pattern-derived [0, 2, 3]
+- ID 41: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 41: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 41: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 42: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 42: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 42: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 43: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 43: pattern counts (HN=3, EN=2) != metadata counts (HN=2, EN=2)
+- ID 43: switch_points [0, 2] != pattern-derived [0, 1, 2]
+- ID 44: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 44: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 44: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 45: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 45: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 45: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 46: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 46: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 46: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 47: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 47: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 47: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 48: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 48: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 48: switch_points [0] != pattern-derived [0, 1, 2]
+- ID 49: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 49: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 49: switch_points [0] != pattern-derived [0, 1, 2]
+- ID 50: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 50: pattern counts (HN=2, EN=3) != metadata counts (HN=3, EN=1)
+- ID 50: switch_points [0] != pattern-derived [0, 1, 3]
+- ID 51: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 51: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 51: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 52: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 52: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=1)
+- ID 52: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 53: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 53: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=1)
+- ID 53: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 54: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 54: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=1)
+- ID 54: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 55: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 55: pattern counts (HN=3, EN=3) != metadata counts (HN=4, EN=0)
+- ID 55: switch_points [] != pattern-derived [0, 1, 3]
+- ID 56: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 56: pattern counts (HN=2, EN=3) != metadata counts (HN=3, EN=1)
+- ID 56: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 57: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 57: pattern counts (HN=3, EN=3) != metadata counts (HN=4, EN=1)
+- ID 57: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 58: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 58: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=1)
+- ID 58: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 59: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 59: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 59: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 60: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 60: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 60: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 61: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 61: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 61: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 62: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 62: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 62: switch_points [2, 3] != pattern-derived [0, 1, 3]
+- ID 63: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 63: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 63: switch_points [2, 3] != pattern-derived [0, 1, 3]
+- ID 64: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 64: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 64: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 65: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 65: pattern counts (HN=4, EN=2) != metadata counts (HN=3, EN=2)
+- ID 65: switch_points [0, 3] != pattern-derived [0, 1, 2]
+- ID 66: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 66: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 66: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 67: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 67: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 67: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 68: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 68: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 68: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 69: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 69: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=2)
+- ID 69: switch_points [2, 4] != pattern-derived [0, 1, 4]
+- ID 70: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 70: pattern counts (HN=3, EN=3) != metadata counts (HN=4, EN=1)
+- ID 70: switch_points [0] != pattern-derived [0, 1, 3]
+- ID 71: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 71: pattern counts (HN=3, EN=3) != metadata counts (HN=2, EN=3)
+- ID 71: switch_points [0, 2, 3] != pattern-derived [0, 1, 3]
+- ID 72: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 72: pattern counts (HN=4, EN=2) != metadata counts (HN=3, EN=2)
+- ID 72: switch_points [0, 2] != pattern-derived [0, 1, 2]
+- ID 73: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 73: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 73: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 74: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 74: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 74: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 75: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 75: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 75: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 76: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 76: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 76: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 77: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 77: pattern counts (HN=4, EN=2) != metadata counts (HN=3, EN=2)
+- ID 77: switch_points [0, 2] != pattern-derived [0, 1, 2]
+- ID 78: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 78: pattern counts (HN=4, EN=3) != metadata counts (HN=3, EN=2)
+- ID 78: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 79: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 79: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 79: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 80: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 80: pattern counts (HN=4, EN=2) != metadata counts (HN=3, EN=2)
+- ID 80: switch_points [0, 2] != pattern-derived [0, 1, 2]
+- ID 81: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 81: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 81: switch_points [0] != pattern-derived [0, 1, 2]
+- ID 82: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 82: pattern counts (HN=2, EN=3) != metadata counts (HN=3, EN=1)
+- ID 82: switch_points [0] != pattern-derived [0, 1, 3]
+- ID 83: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 83: pattern counts (HN=2, EN=3) != metadata counts (HN=3, EN=1)
+- ID 83: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 84: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 84: pattern counts (HN=2, EN=3) != metadata counts (HN=3, EN=1)
+- ID 84: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 85: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 85: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=1)
+- ID 85: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 86: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 86: pattern counts (HN=5, EN=2) != metadata counts (HN=5, EN=1)
+- ID 86: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 87: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 87: pattern counts (HN=4, EN=2) != metadata counts (HN=3, EN=1)
+- ID 87: switch_points [0] != pattern-derived [0, 1, 2]
+- ID 88: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 88: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 88: switch_points [2, 3] != pattern-derived [0, 1, 3]
+- ID 89: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 89: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=1)
+- ID 89: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 90: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 90: pattern counts (HN=3, EN=4) != metadata counts (HN=4, EN=2)
+- ID 90: switch_points [0, 4] != pattern-derived [0, 1, 2, 3, 5]
+- ID 91: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 91: switch_points [0, 1, 3] != pattern-derived [1, 2, 4]
+- ID 92: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 92: pattern counts (HN=3, EN=3) != metadata counts (HN=2, EN=3)
+- ID 92: switch_points [0, 2, 3] != pattern-derived [0, 1, 3]
+- ID 93: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 93: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 93: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 94: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 94: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 94: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 95: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 95: pattern counts (HN=3, EN=3) != metadata counts (HN=4, EN=1)
+- ID 95: switch_points [0] != pattern-derived [0, 1, 2, 3, 4]
+- ID 96: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 96: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=1)
+- ID 96: switch_points [0] != pattern-derived [0, 1, 3]
+- ID 97: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 97: pattern counts (HN=3, EN=3) != metadata counts (HN=4, EN=1)
+- ID 97: switch_points [2] != pattern-derived [0, 1, 3]
+- ID 98: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 98: pattern counts (HN=4, EN=2) != metadata counts (HN=3, EN=1)
+- ID 98: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 99: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 99: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 99: switch_points [0, 2] != pattern-derived [0, 1, 3]
+- ID 100: switch_points [0, 2] != pattern-derived [0, 1, 2]
+- ID 101: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 101: pattern counts (HN=3, EN=4) != metadata counts (HN=4, EN=2)
+- ID 101: switch_points [1, 2] != pattern-derived [0, 1, 4]
+- ID 102: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 102: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 102: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 103: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 103: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 104: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 104: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 104: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 105: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 105: pattern counts (HN=5, EN=2) != metadata counts (HN=4, EN=1)
+- ID 105: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 106: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 106: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 106: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 107: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 107: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 107: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 108: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 108: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 109: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 109: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 109: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 110: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 110: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 110: switch_points [0, 1] != pattern-derived [1, 2, 3]
+- ID 111: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 111: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 111: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 112: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 112: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 112: switch_points [0, 1, 3] != pattern-derived [1, 2, 4]
+- ID 113: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 113: pattern counts (HN=4, EN=3) != metadata counts (HN=3, EN=2)
+- ID 113: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 114: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 114: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 114: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 115: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 115: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 115: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 116: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 116: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 116: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 117: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 117: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 117: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 118: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 118: pattern counts (HN=5, EN=3) != metadata counts (HN=5, EN=2)
+- ID 118: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 119: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 119: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 119: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 120: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 120: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 120: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 121: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 121: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 121: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 122: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 122: pattern counts (HN=5, EN=2) != metadata counts (HN=5, EN=1)
+- ID 122: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 123: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 123: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 123: switch_points [0, 1] != pattern-derived [1, 2, 3]
+- ID 124: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 124: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 124: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 125: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 125: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 125: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 126: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 126: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 126: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 127: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 127: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 127: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 128: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 128: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 128: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 129: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 129: pattern counts (HN=5, EN=2) != metadata counts (HN=4, EN=1)
+- ID 129: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 130: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 130: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 130: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 131: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 131: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 131: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 132: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 132: pattern counts (HN=5, EN=2) != metadata counts (HN=4, EN=1)
+- ID 132: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 133: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 133: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 134: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 134: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 134: switch_points [1, 4] != pattern-derived [0, 1, 2, 3, 4]
+- ID 135: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 135: pattern counts (HN=3, EN=4) != metadata counts (HN=2, EN=3)
+- ID 135: switch_points [2, 3, 4] != pattern-derived [0, 1, 4]
+- ID 136: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 136: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 136: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 137: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 137: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 137: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 138: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 138: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 138: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 139: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 139: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 139: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 140: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 140: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 140: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 141: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 141: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 141: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 142: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 142: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 142: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 143: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 143: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 143: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 144: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 144: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 144: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 145: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 145: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 145: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 146: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 146: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 146: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 147: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 147: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 147: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 148: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 148: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 148: switch_points [0, 1] != pattern-derived [1, 2, 3]
+- ID 149: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 149: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 149: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 150: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 150: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 150: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 151: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 151: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 151: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 152: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 152: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 152: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 153: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 153: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 153: switch_points [0, 1] != pattern-derived [1, 2, 3]
+- ID 154: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 154: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 154: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 155: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 155: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 155: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 156: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 156: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 156: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 157: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 157: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 157: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 158: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 158: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 158: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 159: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 159: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 159: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 160: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 160: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 160: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 161: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 161: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 161: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 162: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 162: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 162: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 163: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 163: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 163: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 164: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 164: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 164: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 165: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 165: pattern counts (HN=4, EN=2) != metadata counts (HN=3, EN=1)
+- ID 165: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 166: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 166: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 166: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 167: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 167: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 168: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 168: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 168: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 169: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 169: pattern counts (HN=5, EN=2) != metadata counts (HN=5, EN=1)
+- ID 169: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 170: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 170: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 170: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 171: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 171: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 171: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 172: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 172: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 172: switch_points [1, 4] != pattern-derived [0, 1, 2, 3, 4]
+- ID 173: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 173: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 173: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 174: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 174: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 174: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 175: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 175: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 175: switch_points [3] != pattern-derived [0, 1, 2]
+- ID 176: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 176: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 176: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 177: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 177: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 177: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 178: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 178: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 178: switch_points [3] != pattern-derived [0, 1, 2]
+- ID 179: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 179: pattern counts (HN=3, EN=3) != metadata counts (HN=2, EN=3)
+- ID 179: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 180: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 180: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 180: switch_points [1, 4] != pattern-derived [0, 1, 2, 3, 4]
+- ID 181: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 181: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 181: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 182: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 182: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 182: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 183: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 183: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 183: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 184: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 184: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 184: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 185: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 185: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 185: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 186: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 186: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 186: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 187: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 187: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 187: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 188: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 188: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 188: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 189: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 189: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 189: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 190: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 190: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 190: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 191: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 191: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 191: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 192: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 192: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 192: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 193: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 193: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 193: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 194: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 194: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 194: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 195: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 195: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 195: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 196: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 196: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 196: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 197: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 197: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 197: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 198: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 198: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 198: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 199: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 199: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 200: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 200: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 201: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 201: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 201: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 202: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 202: pattern counts (HN=4, EN=3) != metadata counts (HN=3, EN=2)
+- ID 202: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 203: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 203: pattern counts (HN=6, EN=2) != metadata counts (HN=5, EN=1)
+- ID 203: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 204: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 204: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 204: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 205: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 205: pattern counts (HN=5, EN=2) != metadata counts (HN=5, EN=1)
+- ID 205: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 206: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 206: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 206: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 207: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 207: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 207: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 208: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 208: pattern counts (HN=5, EN=2) != metadata counts (HN=5, EN=1)
+- ID 208: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 209: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 209: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 209: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 210: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 210: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 210: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 211: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 211: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 211: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 212: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 212: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 212: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 213: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 213: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 213: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 214: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 214: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 214: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 215: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 215: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 215: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 216: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 216: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 216: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 217: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 217: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 217: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 218: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 218: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 218: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 219: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 219: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 219: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 220: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 220: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 220: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 221: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 221: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 221: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 222: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 222: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 222: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 223: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 223: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 223: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 224: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 224: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 224: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 225: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 225: switch_points [1, 4] != pattern-derived [0, 1, 2, 3, 4]
+- ID 226: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 226: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 226: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 227: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 227: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 227: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 228: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 228: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 228: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 229: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 229: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 229: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 230: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 230: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 230: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 231: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 231: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 231: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 232: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 232: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 232: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 233: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 233: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 233: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 234: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 234: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 234: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 235: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 235: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 235: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 236: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 236: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 236: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 237: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 237: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 237: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 238: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 238: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 238: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 239: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 239: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 239: switch_points [1, 4] != pattern-derived [0, 1, 2, 3, 4]
+- ID 240: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 240: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 240: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 241: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 241: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 241: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 242: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 242: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 242: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 243: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 243: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 243: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 244: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 244: pattern counts (HN=4, EN=3) != metadata counts (HN=3, EN=2)
+- ID 244: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 245: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 245: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 245: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 246: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 246: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 246: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 247: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 247: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 247: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 248: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 248: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 248: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 249: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 249: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 249: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 250: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 250: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 250: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 251: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 251: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 251: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 252: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 252: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 252: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 253: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 253: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 253: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 254: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 254: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 254: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 255: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 255: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 255: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 256: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 257: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 257: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 257: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 258: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 258: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 258: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 259: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 259: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 259: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 260: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 260: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 260: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 261: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 261: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 261: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 262: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 262: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 262: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 263: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 263: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 263: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 264: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 264: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 264: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 265: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 265: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 265: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 266: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 266: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 266: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 267: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 267: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 267: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 268: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 268: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 268: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 269: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 269: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 269: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 270: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 270: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 270: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 271: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 271: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 271: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 272: tokens_hindi + tokens_english (4) != len(base_tokens) (5)
+- ID 272: pattern counts (HN=2, EN=3) != metadata counts (HN=2, EN=2)
+- ID 272: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 273: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 273: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 273: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 274: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 274: pattern counts (HN=4, EN=3) != metadata counts (HN=3, EN=2)
+- ID 274: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 275: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 275: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 275: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 276: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 276: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 276: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 277: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 277: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 277: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 278: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 278: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 278: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 279: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 279: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 279: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 280: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 280: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 280: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 281: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 281: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 281: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 282: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 282: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 282: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 283: tokens_hindi + tokens_english (7) != len(base_tokens) (9)
+- ID 283: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 283: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 284: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 284: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 284: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 285: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 285: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 285: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 286: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 286: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 286: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 287: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 287: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 287: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 288: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 288: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 288: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 289: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 289: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 289: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 290: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 290: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 290: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 291: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 291: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 291: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 292: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 292: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 292: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 293: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 293: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 293: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 294: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 294: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 294: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 295: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 295: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 295: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 296: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 296: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 296: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 297: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 297: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 297: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 298: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 298: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 298: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 299: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 299: pattern counts (HN=5, EN=2) != metadata counts (HN=5, EN=1)
+- ID 299: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 300: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 301: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 301: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 301: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 302: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 302: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 302: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 303: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 303: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 303: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 304: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 304: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 304: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 305: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 305: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 305: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 306: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 306: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 306: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 307: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 307: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 307: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 308: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 308: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 308: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 309: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 309: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 309: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 310: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 310: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 310: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 311: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 311: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 311: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 312: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 312: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 312: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 313: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 313: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 313: switch_points [1, 4] != pattern-derived [0, 1, 2, 3, 4]
+- ID 314: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 314: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 314: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 315: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 315: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 315: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 316: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 316: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 316: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 317: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 317: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 317: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 318: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 318: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 318: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 319: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 319: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 319: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 320: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 320: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 320: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 321: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 321: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 321: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 322: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 322: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 322: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 323: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 323: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 323: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 324: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 324: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 324: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 325: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 325: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 325: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 326: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 326: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 326: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 327: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 327: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 327: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 328: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 328: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 328: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 329: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 329: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 329: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 330: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 330: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 330: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 331: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 331: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 331: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 332: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 332: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 332: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 333: tokens_hindi + tokens_english (4) != len(base_tokens) (7)
+- ID 333: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 333: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 334: tokens_hindi + tokens_english (4) != len(base_tokens) (6)
+- ID 334: pattern counts (HN=3, EN=2) != metadata counts (HN=3, EN=1)
+- ID 334: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 335: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 335: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 335: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 336: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 336: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 336: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 337: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 337: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 337: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 338: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 338: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 338: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 339: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 339: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 339: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 340: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 340: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 340: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 341: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 341: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 341: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 342: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 342: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 342: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 343: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 343: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 343: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 344: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 344: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 344: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 345: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 345: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 345: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 346: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 346: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 346: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 347: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 347: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 347: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 348: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 348: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 348: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 349: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 349: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 349: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 350: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 350: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 350: switch_points [0, 3] != pattern-derived [1, 2, 3]
+- ID 351: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 351: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 351: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 352: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 352: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 352: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 353: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 353: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 353: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 354: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 354: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 354: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 355: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 355: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 355: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 356: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 356: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 356: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 357: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 357: pattern counts (HN=4, EN=3) != metadata counts (HN=3, EN=3)
+- ID 357: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 358: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 358: pattern counts (HN=3, EN=3) != metadata counts (HN=4, EN=2)
+- ID 358: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 359: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 359: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 359: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 360: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 360: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 360: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 361: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 361: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 361: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 362: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 362: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 362: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 363: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 363: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 363: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 364: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 364: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 364: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 365: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 365: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 366: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 366: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 366: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 367: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 367: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 367: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 368: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 368: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 368: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 369: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 369: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 369: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 370: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 370: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 370: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 371: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 371: pattern counts (HN=5, EN=2) != metadata counts (HN=5, EN=1)
+- ID 371: switch_points [3] != pattern-derived [0, 2, 3]
+- ID 372: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 372: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 372: switch_points [2, 3] != pattern-derived [0, 1, 3]
+- ID 373: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 373: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 373: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 374: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 374: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 374: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 375: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 375: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 375: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 376: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 376: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 376: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 377: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 377: pattern counts (HN=5, EN=2) != metadata counts (HN=5, EN=1)
+- ID 377: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 378: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 378: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 379: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 379: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 379: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 380: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 380: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 380: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 381: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 381: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 381: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 382: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 382: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 382: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 383: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 383: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 383: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 384: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 384: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 384: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 385: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 385: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 385: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 386: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 386: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 386: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 387: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 387: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 387: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 388: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 388: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 388: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 389: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 389: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 389: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 390: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 390: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 390: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 391: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 391: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 391: switch_points [0, 1] != pattern-derived [1, 2, 3]
+- ID 392: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 392: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 392: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 393: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 393: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 393: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 394: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 394: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 394: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 395: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 395: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 395: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 396: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 396: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 396: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 397: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 397: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 397: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 398: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 398: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 398: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 399: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 399: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 399: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 400: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 400: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 400: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 401: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 401: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 401: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 402: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 402: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 402: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 403: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 403: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 403: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 404: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 404: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 404: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 405: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 405: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 405: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 406: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 406: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 406: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 407: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 407: pattern counts (HN=4, EN=3) != metadata counts (HN=5, EN=2)
+- ID 407: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 408: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 408: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 408: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 409: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 409: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 409: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 410: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 410: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 410: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 411: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 411: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 411: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 412: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 412: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 412: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 413: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 413: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 413: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 414: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 414: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 414: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 415: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 415: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 416: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 416: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 416: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 417: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 417: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 417: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 418: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 418: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 418: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 419: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 419: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 419: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 420: pattern counts (HN=2, EN=4) != metadata counts (HN=3, EN=3)
+- ID 420: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 421: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 421: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 421: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 422: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 422: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 422: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 423: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 423: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 423: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 424: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 424: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 424: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 425: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 425: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 425: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 426: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 426: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 426: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 427: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 427: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 427: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 428: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 428: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 428: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 429: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 429: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 429: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 430: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 430: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 430: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 431: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 431: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 431: switch_points [2] != pattern-derived [0, 1, 2]
+- ID 432: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 432: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 432: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 433: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 433: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 433: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 434: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 434: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 434: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 435: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 435: pattern counts (HN=4, EN=3) != metadata counts (HN=3, EN=3)
+- ID 435: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 436: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 436: pattern counts (HN=4, EN=3) != metadata counts (HN=4, EN=2)
+- ID 436: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 437: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 437: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 437: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 438: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 438: pattern counts (HN=4, EN=2) != metadata counts (HN=4, EN=1)
+- ID 438: switch_points [1] != pattern-derived [0, 1, 2]
+- ID 439: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 439: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 439: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 440: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 440: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 440: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 441: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 441: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 441: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 442: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 442: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 442: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 443: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 443: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 443: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 444: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 444: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 445: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 445: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 445: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 446: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 446: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 446: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 447: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 447: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 447: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 448: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 448: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 448: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 449: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 449: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 449: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 450: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 450: pattern counts (HN=4, EN=3) != metadata counts (HN=3, EN=3)
+- ID 450: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 451: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 451: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 451: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 452: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 452: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 452: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 453: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 453: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 453: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 454: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 454: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 454: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 455: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 455: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 455: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 456: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 456: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 456: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 457: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 457: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 457: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 458: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 458: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 458: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 459: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 459: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 459: switch_points [0, 2, 3, 4] != pattern-derived [1, 2, 5]
+- ID 460: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 460: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 460: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 461: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 461: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 461: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 462: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 462: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 462: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 463: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 463: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 463: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 464: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 464: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 464: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 465: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 465: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 465: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 466: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 466: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 466: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 467: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 467: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 467: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 468: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 468: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 468: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 469: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 469: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 469: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 470: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 470: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 470: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 471: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 471: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 472: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 472: switch_points [0, 1, 2, 3] != pattern-derived [3]
+- ID 473: pattern counts (HN=3, EN=5) != metadata counts (HN=3, EN=4)
+- ID 473: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 474: tokens_hindi + tokens_english (5) != len(base_tokens) (7)
+- ID 474: pattern counts (HN=3, EN=3) != metadata counts (HN=3, EN=2)
+- ID 474: switch_points [1, 2] != pattern-derived [0, 1, 3]
+- ID 475: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 475: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 475: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 476: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 476: pattern counts (HN=4, EN=4) != metadata counts (HN=4, EN=3)
+- ID 476: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 477: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 477: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 477: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 478: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 478: pattern counts (HN=3, EN=5) != metadata counts (HN=3, EN=4)
+- ID 478: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 479: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 479: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 479: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 480: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 480: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 480: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 481: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 481: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 481: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 482: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 482: switch_points [0, 1, 2] != pattern-derived [2]
+- ID 483: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 483: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 483: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 484: tokens_hindi + tokens_english (6) != len(base_tokens) (8)
+- ID 484: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 484: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 485: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 485: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 485: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 486: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 486: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 486: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 487: pattern counts (HN=3, EN=5) != metadata counts (HN=3, EN=4)
+- ID 487: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 488: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 488: pattern counts (HN=4, EN=4) != metadata counts (HN=4, EN=3)
+- ID 488: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 489: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 489: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 489: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 490: pattern counts (HN=3, EN=5) != metadata counts (HN=3, EN=4)
+- ID 490: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 491: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 491: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 491: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 492: tokens_hindi + tokens_english (7) != len(base_tokens) (8)
+- ID 492: pattern counts (HN=3, EN=5) != metadata counts (HN=3, EN=4)
+- ID 492: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 493: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 493: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 493: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 494: tokens_hindi + tokens_english (5) != len(base_tokens) (6)
+- ID 494: pattern counts (HN=2, EN=4) != metadata counts (HN=2, EN=3)
+- ID 494: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 495: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 495: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 496: pattern counts (HN=3, EN=5) != metadata counts (HN=3, EN=4)
+- ID 496: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 497: pattern counts (HN=3, EN=5) != metadata counts (HN=3, EN=4)
+- ID 497: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 498: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 498: pattern counts (HN=2, EN=5) != metadata counts (HN=2, EN=4)
+- ID 498: switch_points [1, 2, 3, 4] != pattern-derived [0, 1, 5]
+- ID 499: tokens_hindi + tokens_english (6) != len(base_tokens) (7)
+- ID 499: pattern counts (HN=3, EN=4) != metadata counts (HN=3, EN=3)
+- ID 499: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
+- ID 500: tokens_hindi + tokens_english (7) != len(base_tokens) (9)
+- ID 500: pattern counts (HN=4, EN=4) != metadata counts (HN=4, EN=3)
+- ID 500: switch_points [1, 2, 3] != pattern-derived [0, 1, 4]
