@@ -192,14 +192,21 @@ def run_plots(input_path: Path, figures_dir: Path) -> None:
     figure_score_by_switch_complexity(dataframe, metrics, figures_dir / "figure3_score_by_switch_complexity.png")
     figure_pattern_heatmap(dataframe, metrics, figures_dir / "figure4_pattern_heatmap.png")
 
-    has_human_sep = figure_human_label_separation(dataframe, metrics, figures_dir / "figure5_human_label_separation.png")
+    figure5_path = figures_dir / "figure5_human_label_separation.png"
+    figure5_skip_path = figures_dir / "figure5_human_label_separation_skipped.txt"
+
+    has_human_sep = figure_human_label_separation(dataframe, metrics, figure5_path)
     if not has_human_sep:
-        note_path = figures_dir / "figure5_human_label_separation_skipped.txt"
-        note_path.write_text(
+        figure5_skip_path.write_text(
             "Figure 5 skipped: no non-null human semantic labels available in metric_scores.csv.\n"
             "Fill human_validation.csv and rebuild pairwise labels before re-running plotting.\n",
             encoding="utf-8",
         )
+        if figure5_path.exists():
+            figure5_path.unlink()
+    else:
+        if figure5_skip_path.exists():
+            figure5_skip_path.unlink()
 
 
 def main() -> None:

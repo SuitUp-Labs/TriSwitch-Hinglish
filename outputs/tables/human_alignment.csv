@@ -1,2 +1,5 @@
-status,note
-no_human_labels_available,Fill data/processed/human_validation.csv and rebuild pairwise labels for alignment stats.
+metric,spearman_with_semantic_label,p_value,n,note
+bleu,,,1500,semantic labels are constant; correlation undefined
+bertscore_f1,,,1500,semantic labels are constant; correlation undefined
+bertscore_p,,,1500,semantic labels are constant; correlation undefined
+bertscore_r,,,1500,semantic labels are constant; correlation undefined

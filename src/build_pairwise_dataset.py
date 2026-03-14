@@ -9,7 +9,7 @@ from config import CONFIG
 from utils import ensure_parent_dir
 
 
-def _load_validation_lookup(validation_csv_path: Path) -> dict[tuple[int, str], dict]:
+def load_validation_lookup(validation_csv_path: Path) -> dict[tuple[int, str], dict]:
     if not validation_csv_path.exists():
         return {}
 
@@ -110,7 +110,7 @@ def main() -> None:
     args = parser.parse_args()
 
     cleaned_df = pd.read_csv(args.input)
-    validation_lookup = _load_validation_lookup(args.human_validation)
+    validation_lookup = load_validation_lookup(args.human_validation)
 
     pairwise_df = build_pairwise_rows(cleaned_df, validation_lookup)
     ensure_parent_dir(args.output)

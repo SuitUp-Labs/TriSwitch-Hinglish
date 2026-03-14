@@ -1,9 +1,10 @@
 import argparse
 
+import pandas as pd
 import torch
 
 from analyze_metrics import run_analysis
-from build_pairwise_dataset import build_pairwise_rows
+from build_pairwise_dataset import build_pairwise_rows, load_validation_lookup
 from config import CONFIG
 from feature_engineering import add_features
 from load_dataset import load_and_validate_dataset, write_sanity_log
@@ -31,6 +32,11 @@ def main() -> None:
     parser.add_argument("--bert-batch-size", type=int, default=32)
     parser.add_argument("--run-analysis", action="store_true")
     parser.add_argument("--run-plots", action="store_true")
+    parser.add_argument(
+        "--refresh-validation-template",
+        action="store_true",
+        help="Overwrite data/processed/human_validation.csv with a fresh empty template.",
+    )
     args = parser.parse_args()
 
     set_seed(CONFIG.random_seed)
@@ -48,15 +54,21 @@ def main() -> None:
     cleaned_df.to_csv(CONFIG.cleaned_dataset_path, index=False, encoding="utf-8")
     write_sanity_log(report, CONFIG.dataset_sanity_log_path)
 
-    human_validation_df = create_annotation_template(cleaned_df)
-    ensure_parent_dir(CONFIG.human_validation_path)
-    human_validation_df.to_csv(CONFIG.human_validation_path, index=False, encoding="utf-8")
+    if CONFIG.human_validation_path.exists() and not args.refresh_validation_template:
+        human_validation_df = pd.read_csv(CONFIG.human_validation_path)
+        print(f"Validation file found. Using existing annotations: {CONFIG.human_validation_path}")
+    else:
+        human_validation_df = create_annotation_template(cleaned_df)
+        ensure_parent_dir(CONFIG.human_validation_path)
+        human_validation_df.to_csv(CONFIG.human_validation_path, index=False, encoding="utf-8")
+        print(f"Validation template written: {CONFIG.human_validation_path}")
 
     validated_df = create_validated_dataset(cleaned_df, human_validation_df)
     ensure_parent_dir(CONFIG.validated_dataset_path)
     validated_df.to_csv(CONFIG.validated_dataset_path, index=False, encoding="utf-8")
 
-    pairwise_df = build_pairwise_rows(cleaned_df, validation_lookup={})
+    validation_lookup = load_validation_lookup(CONFIG.human_validation_path)
+    pairwise_df = build_pairwise_rows(cleaned_df, validation_lookup=validation_lookup)
     ensure_parent_dir(CONFIG.pairwise_dataset_path)
     pairwise_df.to_csv(CONFIG.pairwise_dataset_path, index=False, encoding="utf-8")
 

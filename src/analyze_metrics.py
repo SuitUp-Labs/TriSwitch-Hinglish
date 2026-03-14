@@ -167,13 +167,24 @@ def human_alignment(dataframe: pd.DataFrame, metrics: list[str]) -> pd.DataFrame
         mask = valid_mask & scores.notna()
         if mask.sum() < 3:
             continue
-        corr, p_value = spearmanr(labels[mask], scores[mask])
+        label_values = labels[mask]
+        score_values = scores[mask]
+        if label_values.nunique() < 2:
+            corr, p_value = np.nan, np.nan
+            note = "semantic labels are constant; correlation undefined"
+        elif score_values.nunique() < 2:
+            corr, p_value = np.nan, np.nan
+            note = "metric scores are constant; correlation undefined"
+        else:
+            corr, p_value = spearmanr(label_values, score_values)
+            note = "ok"
         rows.append(
             {
                 "metric": metric,
                 "spearman_with_semantic_label": corr,
                 "p_value": p_value,
                 "n": int(mask.sum()),
+                "note": note,
             }
         )
     return pd.DataFrame(rows)
