@@ -1,8 +1,17 @@
 """
 Pairwise Metric Computation
-Computes BLEU, BERTScore, COMET, and BLEURT for each triple (base vs topic-fronting and base vs emphasis-shift)
+Computes BLEU, BERTScore, and optionally COMET for each triple
+(base vs topic-fronting and base vs emphasis-shift).
+
+Usage:
+    # BLEU + BERTScore only (fast, no extra install):
+    python scripts/evaluation/pairwise_metrics.py
+
+    # Add COMET (requires: pip install unbabel-comet):
+    python scripts/evaluation/pairwise_metrics.py --comet
 """
 
+import argparse
 import json
 import csv
 import sys
@@ -68,19 +77,32 @@ def compute_comet(hypothesis, reference, model=None):
 
 def main():
     global COMET_AVAILABLE
-    
+
+    # ── CLI ────────────────────────────────────────────────────────────────
+    parser = argparse.ArgumentParser(description="Compute pairwise metrics for TriSwitch-Hinglish dataset")
+    parser.add_argument(
+        "--comet", action="store_true",
+        help="Load and run COMET (requires: pip install unbabel-comet, ~1 GB model download)"
+    )
+    args = parser.parse_args()
+
+    # Disable COMET if not explicitly requested
+    if not args.comet:
+        COMET_AVAILABLE = False
+        print("Note: COMET disabled. Run with --comet to enable.")
+
     # File paths
     INPUT_JSON = Path("dataset/initial/db_with_reference_en.json")
     OUTPUT_CSV = Path("results/pairwise_scores.csv")
-    
+
     # Create output directory if needed
     OUTPUT_CSV.parent.mkdir(parents=True, exist_ok=True)
-    
-    # Load COMET model if available
+
+    # Load COMET model if available and requested
     comet_model = None
     if COMET_AVAILABLE:
         try:
-            print("Loading COMET model...")
+            print("Loading COMET model (Unbabel/wmt22-comet-da)...")
             comet_model_name = download_model("Unbabel/wmt22-comet-da")
             comet_model = load_from_checkpoint(comet_model_name)
             print("COMET model loaded successfully")
