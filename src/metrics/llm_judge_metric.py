@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import re
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -17,6 +18,7 @@ from utils import ensure_parent_dir
 
 DEFAULT_MODEL = "meta/llama-3.1-70b-instruct"
 DEFAULT_BASE_URL = "https://integrate.api.nvidia.com/v1"
+DEFAULT_CHECKPOINT_PATH = CONFIG.data_processed_dir / "llm_judge_progress.csv"
 
 
 def _extract_json_object(text: str) -> dict | None:
@@ -118,6 +120,36 @@ def _nim_chat_completion(
     return content
 
 
+def _row_key(row: pd.Series) -> tuple[object, str]:
+    return row.get("id"), str(row.get("pair_type", ""))
+
+
+def _save_checkpoint(score_map: dict[tuple[object, str], float], checkpoint_path: Path) -> None:
+    ensure_parent_dir(checkpoint_path)
+    records = [
+        {"id": key[0], "pair_type": key[1], "llm_judge_score": value}
+        for key, value in score_map.items()
+    ]
+    pd.DataFrame(records).to_csv(checkpoint_path, index=False, encoding="utf-8")
+
+
+def _load_checkpoint(checkpoint_path: Path) -> dict[tuple[object, str], float]:
+    if not checkpoint_path.exists():
+        return {}
+
+    checkpoint_df = pd.read_csv(checkpoint_path)
+    required_cols = {"id", "pair_type", "llm_judge_score"}
+    if not required_cols.issubset(checkpoint_df.columns):
+        return {}
+
+    score_map: dict[tuple[object, str], float] = {}
+    for _, row in checkpoint_df.iterrows():
+        if pd.isna(row["llm_judge_score"]):
+            continue
+        score_map[(row["id"], str(row["pair_type"]))] = float(row["llm_judge_score"])
+    return score_map
+
+
 def compute_llm_judge_scores(
     dataframe: pd.DataFrame,
     model: str = DEFAULT_MODEL,
@@ -126,6 +158,11 @@ def compute_llm_judge_scores(
     temperature: float = 0.0,
     max_tokens: int = 80,
     timeout_seconds: int = 60,
+    save_every: int = 100,
+    checkpoint_path: Path = DEFAULT_CHECKPOINT_PATH,
+    resume: bool = True,
+    max_retries: int = 6,
+    retry_base_seconds: float = 2.0,
 ) -> pd.DataFrame:
     load_dotenv()
     nim_api_key = api_key or os.getenv("NVIDIA_NIM_API_KEY") or os.getenv("NIM_API_KEY")
@@ -134,24 +171,68 @@ def compute_llm_judge_scores(
             "Missing NVIDIA NIM API key. Set NVIDIA_NIM_API_KEY or NIM_API_KEY in your environment or .env file."
         )
 
-    scores: list[float] = []
-    for _, row in tqdm(dataframe.iterrows(), total=len(dataframe), desc="LLM judge"):
+    score_map = _load_checkpoint(checkpoint_path) if resume else {}
+    total_before = len(score_map)
+
+    pending_rows = [
+        row
+        for _, row in dataframe.iterrows()
+        if _row_key(row) not in score_map
+    ]
+
+    if total_before > 0:
+        print(f"Loaded {total_before} cached LLM-judge scores from {checkpoint_path}.")
+
+    processed_since_save = 0
+    for row in tqdm(pending_rows, total=len(pending_rows), desc="LLM judge"):
         text_a = str(row.get("text_a", "") if pd.notna(row.get("text_a", "")) else "")
         text_b = str(row.get("text_b", "") if pd.notna(row.get("text_b", "")) else "")
         prompt = _build_prompt(text_a=text_a, text_b=text_b)
-        content = _nim_chat_completion(
-            prompt=prompt,
-            api_key=nim_api_key,
-            model=model,
-            base_url=base_url,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            timeout_seconds=timeout_seconds,
-        )
-        scores.append(_extract_score(content))
+
+        attempt = 0
+        while True:
+            try:
+                content = _nim_chat_completion(
+                    prompt=prompt,
+                    api_key=nim_api_key,
+                    model=model,
+                    base_url=base_url,
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                    timeout_seconds=timeout_seconds,
+                )
+                score = _extract_score(content)
+                score_map[_row_key(row)] = score
+                break
+            except RuntimeError as error:
+                if "status 429" not in str(error) or attempt >= max_retries:
+                    _save_checkpoint(score_map, checkpoint_path)
+                    raise
+                sleep_seconds = retry_base_seconds * (2 ** attempt)
+                attempt += 1
+                print(f"429 received. Retry {attempt}/{max_retries} after {sleep_seconds:.1f}s...")
+                time.sleep(sleep_seconds)
+
+        processed_since_save += 1
+        if processed_since_save >= save_every:
+            _save_checkpoint(score_map, checkpoint_path)
+            print(f"Checkpoint saved: {checkpoint_path} ({len(score_map)} rows)")
+            processed_since_save = 0
+
+    _save_checkpoint(score_map, checkpoint_path)
+    print(f"Final checkpoint saved: {checkpoint_path} ({len(score_map)} rows)")
 
     output = dataframe[["id", "pair_type"]].copy()
-    output["llm_judge_score"] = np.array(scores, dtype=float)
+    output["llm_judge_score"] = output.apply(
+        lambda row: score_map.get((row["id"], str(row["pair_type"])), np.nan),
+        axis=1,
+    )
+
+    if output["llm_judge_score"].isna().any():
+        missing = int(output["llm_judge_score"].isna().sum())
+        raise RuntimeError(
+            f"LLM judge scoring incomplete: missing {missing} rows. Resume by rerunning the same command."
+        )
     return output
 
 
@@ -164,6 +245,11 @@ def main() -> None:
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--max-tokens", type=int, default=80)
     parser.add_argument("--timeout-seconds", type=int, default=60)
+    parser.add_argument("--save-every", type=int, default=100)
+    parser.add_argument("--checkpoint-path", type=Path, default=DEFAULT_CHECKPOINT_PATH)
+    parser.add_argument("--no-resume", action="store_true")
+    parser.add_argument("--max-retries", type=int, default=6)
+    parser.add_argument("--retry-base-seconds", type=float, default=2.0)
     args = parser.parse_args()
 
     dataframe = pd.read_csv(args.input)
@@ -174,6 +260,11 @@ def main() -> None:
         temperature=args.temperature,
         max_tokens=args.max_tokens,
         timeout_seconds=args.timeout_seconds,
+        save_every=args.save_every,
+        checkpoint_path=args.checkpoint_path,
+        resume=not args.no_resume,
+        max_retries=args.max_retries,
+        retry_base_seconds=args.retry_base_seconds,
     )
     ensure_parent_dir(args.output)
     scores.to_csv(args.output, index=False, encoding="utf-8")

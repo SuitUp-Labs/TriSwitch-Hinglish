@@ -1,4 +1,5 @@
 import argparse
+from pathlib import Path
 
 import pandas as pd
 import torch
@@ -8,7 +9,7 @@ from build_pairwise_dataset import build_pairwise_rows, load_validation_lookup
 from config import CONFIG
 from feature_engineering import add_features
 from load_dataset import load_and_validate_dataset, write_sanity_log
-from metrics.llm_judge_metric import DEFAULT_BASE_URL, DEFAULT_MODEL
+from metrics.llm_judge_metric import DEFAULT_BASE_URL, DEFAULT_CHECKPOINT_PATH, DEFAULT_MODEL
 from plotting import run_plots
 from run_metrics import metric_summary_table, run_selected_metrics
 from utils import ensure_parent_dir, set_seed
@@ -36,6 +37,11 @@ def main() -> None:
     parser.add_argument("--llm-temperature", type=float, default=0.0)
     parser.add_argument("--llm-max-tokens", type=int, default=80)
     parser.add_argument("--llm-timeout-seconds", type=int, default=60)
+    parser.add_argument("--llm-save-every", type=int, default=100)
+    parser.add_argument("--llm-checkpoint-path", type=Path, default=DEFAULT_CHECKPOINT_PATH)
+    parser.add_argument("--llm-no-resume", action="store_true")
+    parser.add_argument("--llm-max-retries", type=int, default=6)
+    parser.add_argument("--llm-retry-base-seconds", type=float, default=2.0)
     parser.add_argument("--run-analysis", action="store_true")
     parser.add_argument("--run-plots", action="store_true")
     parser.add_argument(
@@ -95,6 +101,11 @@ def main() -> None:
             llm_temperature=args.llm_temperature,
             llm_max_tokens=args.llm_max_tokens,
             llm_timeout_seconds=args.llm_timeout_seconds,
+            llm_save_every=args.llm_save_every,
+            llm_checkpoint_path=args.llm_checkpoint_path,
+            llm_resume=not args.llm_no_resume,
+            llm_max_retries=args.llm_max_retries,
+            llm_retry_base_seconds=args.llm_retry_base_seconds,
         )
         ensure_parent_dir(CONFIG.metric_scores_path)
         metric_scores_df.to_csv(CONFIG.metric_scores_path, index=False, encoding="utf-8")

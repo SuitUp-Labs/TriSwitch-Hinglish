@@ -7,7 +7,12 @@ import torch
 from config import CONFIG
 from metrics.bertscore_metric import compute_bertscore
 from metrics.bleu_metric import compute_bleu_scores
-from metrics.llm_judge_metric import DEFAULT_BASE_URL, DEFAULT_MODEL, compute_llm_judge_scores
+from metrics.llm_judge_metric import (
+    DEFAULT_BASE_URL,
+    DEFAULT_CHECKPOINT_PATH,
+    DEFAULT_MODEL,
+    compute_llm_judge_scores,
+)
 from utils import ensure_parent_dir
 
 
@@ -30,6 +35,11 @@ def run_selected_metrics(
     llm_temperature: float,
     llm_max_tokens: int,
     llm_timeout_seconds: int,
+    llm_save_every: int,
+    llm_checkpoint_path: Path,
+    llm_resume: bool,
+    llm_max_retries: int,
+    llm_retry_base_seconds: float,
 ) -> pd.DataFrame:
     merged = dataframe.copy()
 
@@ -52,6 +62,11 @@ def run_selected_metrics(
                 temperature=llm_temperature,
                 max_tokens=llm_max_tokens,
                 timeout_seconds=llm_timeout_seconds,
+                save_every=llm_save_every,
+                checkpoint_path=llm_checkpoint_path,
+                resume=llm_resume,
+                max_retries=llm_max_retries,
+                retry_base_seconds=llm_retry_base_seconds,
             )
         else:
             raise ValueError(f"Unsupported metric selected: {metric_name}")
@@ -89,6 +104,11 @@ def main() -> None:
     parser.add_argument("--llm-temperature", type=float, default=0.0)
     parser.add_argument("--llm-max-tokens", type=int, default=80)
     parser.add_argument("--llm-timeout-seconds", type=int, default=60)
+    parser.add_argument("--llm-save-every", type=int, default=100)
+    parser.add_argument("--llm-checkpoint-path", type=Path, default=DEFAULT_CHECKPOINT_PATH)
+    parser.add_argument("--llm-no-resume", action="store_true")
+    parser.add_argument("--llm-max-retries", type=int, default=6)
+    parser.add_argument("--llm-retry-base-seconds", type=float, default=2.0)
     parser.add_argument("--cpu", action="store_true")
     args = parser.parse_args()
 
@@ -114,6 +134,11 @@ def main() -> None:
         llm_temperature=args.llm_temperature,
         llm_max_tokens=args.llm_max_tokens,
         llm_timeout_seconds=args.llm_timeout_seconds,
+        llm_save_every=args.llm_save_every,
+        llm_checkpoint_path=args.llm_checkpoint_path,
+        llm_resume=not args.llm_no_resume,
+        llm_max_retries=args.llm_max_retries,
+        llm_retry_base_seconds=args.llm_retry_base_seconds,
     )
 
     ensure_parent_dir(args.output)
