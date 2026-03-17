@@ -94,7 +94,7 @@ python src/run_metrics.py --metrics bleu,bertscore,llm_judge
 To run only LLM-as-judge with the requested model:
 
 ```bash
-python src/run_metrics.py --metrics llm_judge --llm-model meta/llama-3.1-70b-instruct
+python src/run_metrics.py --metrics llm_judge --llm-model meta/llama-3.1-8b-instruct
 ```
 
 ## Design decisions
