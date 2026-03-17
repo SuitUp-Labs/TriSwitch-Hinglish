@@ -9,7 +9,7 @@ from config import CONFIG
 from utils import ensure_parent_dir
 
 
-METRIC_COLUMNS = ["bleu", "bertscore_f1", "bertscore_p", "bertscore_r"]
+METRIC_COLUMNS = ["bleu", "bertscore_f1", "bertscore_p", "bertscore_r", "llm_judge_score"]
 
 
 def _available_metrics(dataframe: pd.DataFrame) -> list[str]:

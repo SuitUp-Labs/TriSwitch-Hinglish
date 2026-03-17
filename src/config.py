@@ -6,7 +6,7 @@ from pathlib import Path
 class PipelineConfig:
     project_root: Path = field(default_factory=lambda: Path(__file__).resolve().parents[1])
     random_seed: int = 42
-    selected_metrics: tuple[str, ...] = ("bleu", "bertscore")
+    selected_metrics: tuple[str, ...] = ("bleu", "bertscore", "llm_judge")
     required_fields: tuple[str, ...] = (
         "id",
         "base",

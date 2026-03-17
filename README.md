@@ -9,7 +9,7 @@ From raw JSON records (`base`, `variant_topic_fronting`, `variant_emphasis_shift
 - Validated datasets and annotation template
 - Pairwise experimental table
 - Structural feature table
-- Metric score table (BLEU + BERTScore in v1)
+- Metric score table (BLEU + BERTScore + LLM-as-judge)
 - Summary statistics table
 - Sanity logs
 
@@ -45,7 +45,8 @@ TriSwitch-Hinglish/
 │   ├── run_pipeline.py
 │   └── metrics/
 │       ├── bleu_metric.py
-│       └── bertscore_metric.py
+│       ├── bertscore_metric.py
+│       └── llm_judge_metric.py
 ├── notebooks/
 │   ├── 01_dataset_sanity_check.ipynb
 │   ├── 02_metric_distributions.ipynb
@@ -59,6 +60,14 @@ TriSwitch-Hinglish/
 pip install -r requirements.txt
 ```
 
+Create a `.env` file in the project root with your NVIDIA NIM API key:
+
+```bash
+NVIDIA_NIM_API_KEY=your_key_here
+```
+
+The pipeline also accepts `NIM_API_KEY`.
+
 ## Run end-to-end (v1)
 
 ```bash
@@ -70,7 +79,7 @@ This runs:
 2. `validate_dataset.py` logic (annotation template + validated dataset)
 3. `build_pairwise_dataset.py`
 4. `feature_engineering.py`
-5. `run_metrics.py` logic (BLEU + BERTScore)
+5. `run_metrics.py` logic (BLEU + BERTScore + LLM-as-judge)
 
 ## Run individual scripts
 
@@ -79,7 +88,13 @@ python src/load_dataset.py
 python src/validate_dataset.py
 python src/build_pairwise_dataset.py
 python src/feature_engineering.py
-python src/run_metrics.py --metrics bleu,bertscore
+python src/run_metrics.py --metrics bleu,bertscore,llm_judge
+```
+
+To run only LLM-as-judge with the requested model:
+
+```bash
+python src/run_metrics.py --metrics llm_judge --llm-model meta/llama-3.1-70b-instruct
 ```
 
 ## Design decisions
@@ -91,6 +106,5 @@ python src/run_metrics.py --metrics bleu,bertscore
 
 ## Next additions (planned)
 
-- `src/analyze_metrics.py` and `src/plotting.py`
-- BLEURT, COMET, and LLM-as-a-judge modules
+- BLEURT and COMET modules
 - statistical tests and paper-ready figures

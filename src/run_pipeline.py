@@ -8,6 +8,7 @@ from build_pairwise_dataset import build_pairwise_rows, load_validation_lookup
 from config import CONFIG
 from feature_engineering import add_features
 from load_dataset import load_and_validate_dataset, write_sanity_log
+from metrics.llm_judge_metric import DEFAULT_BASE_URL, DEFAULT_MODEL
 from plotting import run_plots
 from run_metrics import metric_summary_table, run_selected_metrics
 from utils import ensure_parent_dir, set_seed
@@ -30,6 +31,11 @@ def main() -> None:
     parser.add_argument("--cpu", action="store_true")
     parser.add_argument("--bert-model-type", default="xlm-roberta-base")
     parser.add_argument("--bert-batch-size", type=int, default=32)
+    parser.add_argument("--llm-model", default=DEFAULT_MODEL)
+    parser.add_argument("--llm-base-url", default=DEFAULT_BASE_URL)
+    parser.add_argument("--llm-temperature", type=float, default=0.0)
+    parser.add_argument("--llm-max-tokens", type=int, default=80)
+    parser.add_argument("--llm-timeout-seconds", type=int, default=60)
     parser.add_argument("--run-analysis", action="store_true")
     parser.add_argument("--run-plots", action="store_true")
     parser.add_argument(
@@ -84,6 +90,11 @@ def main() -> None:
             use_gpu=use_gpu,
             bert_model_type=args.bert_model_type,
             bert_batch_size=args.bert_batch_size,
+            llm_model=args.llm_model,
+            llm_base_url=args.llm_base_url,
+            llm_temperature=args.llm_temperature,
+            llm_max_tokens=args.llm_max_tokens,
+            llm_timeout_seconds=args.llm_timeout_seconds,
         )
         ensure_parent_dir(CONFIG.metric_scores_path)
         metric_scores_df.to_csv(CONFIG.metric_scores_path, index=False, encoding="utf-8")
