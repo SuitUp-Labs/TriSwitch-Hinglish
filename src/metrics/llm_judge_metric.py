@@ -56,12 +56,19 @@ def _extract_score(text: str) -> float:
 
 def _build_prompt(text_a: str, text_b: str) -> str:
     return (
-        "You are evaluating semantic equivalence for Hinglish sentence pairs. "
-        "Score how well sentence A preserves the meaning of sentence B on a 0.0 to 1.0 scale, "
-        "where 1.0 means fully equivalent and 0.0 means unrelated.\n\n"
+        "You are a strict bilingual evaluator for Hinglish (Hindi-English code-switched) sentences.\n"
+        "Score how well Sentence A preserves the MEANING of Sentence B on a 0.0–1.0 scale.\n\n"
+        "Scoring rubric:\n"
+        "  1.0 — Identical meaning, only word order or trivial variation differs\n"
+        "  0.8 — Near-identical meaning, minor phrasing difference with no semantic loss\n"
+        "  0.6 — Mostly same meaning but one element is shifted, omitted, or weakened\n"
+        "  0.4 — Partial overlap; key information is missing or altered\n"
+        "  0.2 — Loosely related topic but different meaning\n"
+        "  0.0 — Completely unrelated or contradictory\n\n"
+        "Important: Use the FULL range. Do not default to 0.8 unless it precisely fits.\n\n"
         "Output ONLY valid JSON with keys: score, rationale.\n"
-        "- score: float between 0.0 and 1.0\n"
-        "- rationale: one concise sentence\n\n"
+        "- score: float between 0.0 and 1.0 (use values like 0.3, 0.65, 0.9 — not just round numbers)\n"
+        "- rationale: one concise sentence explaining the specific difference or similarity\n\n"
         f"Sentence A: {text_a}\n"
         f"Sentence B: {text_b}"
     )
