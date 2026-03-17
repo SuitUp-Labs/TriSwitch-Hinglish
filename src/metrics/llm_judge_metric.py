@@ -16,7 +16,7 @@ from config import CONFIG
 from utils import ensure_parent_dir
 
 
-DEFAULT_MODEL = "meta/llama-3.1-8b-instruct"
+DEFAULT_MODEL = "meta/llama-3.3-70b-instruct"
 DEFAULT_BASE_URL = "https://integrate.api.nvidia.com/v1"
 DEFAULT_CHECKPOINT_PATH = CONFIG.data_processed_dir / "llm_judge_progress.csv"
 
