@@ -70,7 +70,7 @@ def _build_prompt(text_a: str, text_b: str) -> str:
         "  - Sentences with awkward fronting or unnatural constituent order must score below 0.75.\n"
         "  - Only completely effortless, spontaneous-sounding Hinglish scores above 0.90.\n"
         "  - Your scores across many sentences should form a spread, not cluster at one value.\n\n"
-        "Output ONLY valid JSON: {\"reasoning\": \"2-3 sentences\", \"score\": float}\n\n"
+        "Output ONLY valid JSON: {\"reasoning\": \"one brief phrase\", \"score\": float}\n\n"
         f"Sentence A (evaluate this): {text_a}\n"
         f"Sentence B (topic reference): {text_b}"
     )
